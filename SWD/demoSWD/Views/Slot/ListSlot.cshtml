@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách Slot";
+    var slots = ViewBag.Slots as List<demoSWD.Models.Slot>;
+}
+
+<h2>Danh sách Slot</h2>
+
+<div class="slot-container">
+    @if (slots != null && slots.Count > 0)
+    {
+        foreach (var slot in slots)
+        {
+            <div class="slot-card">
+                <div class="slot-header">
+                    <span class="slot-title">Slot @slot.SlotId</span>
+                    <a href="#" class="view-slot">View slot</a>
+                </div>
+                <p style="font-size: 15px">CreatedDate:@slot.CreatedDate</p>
+                <div class="slot-details">
+@*                     <div class="slot-time">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>@slot.StartTime.ToString("HH:mm dd/MM/yyyy") - @slot.EndTime.ToString("HH:mm dd/MM/yyyy")</span>
+                    </div> *@
+                    <div class="slot-content">
+                        <p><strong>Course Title</strong></p>
+                        <p>@slot.SlotName</p>
+                        
+                    </div>
+                </div>
+                <div class="slot-questions">
+                    <h3>Question</h3>
+                    <ul>
+                        @foreach(var question in slot.Questions)
+                        {
+                            <li>
+                                <span class="question-icon"><i class="fas fa-question-circle"></i></span>
+                                @Html.ActionLink(question.QuestionTitle, "ViewQuestion", "Answer", new { questionId = question.QuestionId }, new { @class = "question-link" })
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Không có slot nào để hiển thị.</p>
+    }
+</div>
+
+<style>
+    .slot-container {
+        margin: 20px;
+    }
+    .slot-card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #f9f9f9;
+    }
+    .slot-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .slot-title {
+        background-color: #4f8cf7;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .view-slot {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .view-slot:hover {
+        text-decoration: underline;
+    }
+    .slot-details {
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+    .slot-time {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #666;
+    }
+    .slot-time i {
+        margin-right: 5px;
+    }
+    .slot-content p {
+        margin: 0;
+        font-weight: normal;
+        font-size: 14px;
+    }
+    .slot-questions {
+        margin-top: 10px;
+    }
+    .slot-questions h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .slot-questions ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    .slot-questions li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .question-icon {
+        color: #ff9f00;
+        margin-right: 5px;
+    }
+    .question-status.custom {
+        color: red;
+        margin-left: 5px;
+    }
+    .question-status.finished {
+        color: green;
+        margin-left: 10px;
+    }
+</style>

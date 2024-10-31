@@ -1,0 +1,79 @@
+﻿@model demoSWD.Models.Report
+@{
+    ViewBag.Title = "Detail Report";
+    var report = ViewBag.Report as demoSWD.Models.Report;
+    var message = TempData["ErrorMessage"] as string;
+}
+<div class="report-detail-container">
+    <div class="report-detail-box">
+        <h2>@report.ReportTitle</h2>
+        @if (report.CreatedBy.GetValueOrDefault() == 2)
+        {
+            <p>Created By: Lecturer</p>
+        }
+        else if (report.CreatedBy.GetValueOrDefault() == 3)
+        {
+            <p>Created By: Student</p>
+        }
+
+
+        <div class="report-content">
+            <p>@report.ReportDetail</p>
+        </div>
+
+        <p><strong>Created Date:</strong> @(report.CreatedDate.HasValue ? report.CreatedDate.Value.ToString("dd-MM-yyyy") : "N/A")</p>
+          <p><strong>Solved Date:</strong> @(report.IsSolved ? report.SolvedDate?.ToString("dd-MM-yyyy") : "Not solved")</p>
+
+        <form asp-action="isReportSolved" asp-controller="Report" method="post">
+            <input type="hidden" name="reportId" value="@Model.ReportId" />
+            @if (Model.IsSolved)
+            {
+                <p><em style="color:red">This report has already been solved  .</em></p>
+            }
+            else
+            {
+                <button type="submit" class="solve-button">Solve</button>
+            }
+        </form>
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @TempData["ErrorMessage"]
+            </div>
+        }
+    </div>
+</div>
+<style>
+        .report-detail-container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .report-detail-box {
+        border: 1px solid #333;
+        padding: 20px;
+        width: 50%;
+        text-align: left;
+    }
+
+    .report-content {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .solve-button {
+        padding: 8px 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .solve-button:hover {
+        background-color: #218838;
+    }
+
+</style>
+

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Danh sách Report";
+    var reports = ViewBag.Reports as List<demoSWD.Models.Report>;
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>createddate</th>
+            <th>createdby</th>
+            <th>issolve</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in reports)
+        {
+            <tr>
+                <td>@report.ReportId</td>
+                <td >
+                    <a style="text-decoration: none; color:black"  href="@Url.Action("ViewDetailReport", "Report", new { reportId = report.ReportId })">
+                        @report.ReportTitle
+                </a>
+                </td>
+                <td>   <p> @(report.CreatedDate.HasValue ? report.CreatedDate.Value.ToString("dd-MM-yyyy") : "N/A")</p></td>
+                @if (report.CreatedBy == 3)
+                    {
+                    <td>student</td>
+                }
+                else if(report.CreatedBy == 2)
+                {
+                    <td>lecturer</td>
+                }
+                else
+                {
+                    <td></td>
+                }
+
+               @if (!report.IsSolved)
+               {
+                  <td>Not Yet</td>
+               }
+               else
+               {
+                    <td>Done</td>
+               }
+           
+            </tr>
+        }
+    </tbody>
+</table>

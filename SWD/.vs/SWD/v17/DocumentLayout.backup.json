@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\SWD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|e:\\swd\\demoswd\\views\\report\\listreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|solutionrelative:demoswd\\views\\report\\listreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|e:\\swd\\demoswd\\views\\report\\viewdetailreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|solutionrelative:demoswd\\views\\report\\viewdetailreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|e:\\swd\\demoswd\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|solutionrelative:demoswd\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|e:\\swd\\demoswd\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD580DEE-DD71-48D5-BD8D-86A92BF5E9EA}|demoSWD\\demoSWD.csproj|solutionrelative:demoswd\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListReport.cshtml",
+              "DocumentMoniker": "E:\\SWD\\demoSWD\\Views\\Report\\ListReport.cshtml",
+              "RelativeDocumentMoniker": "demoSWD\\Views\\Report\\ListReport.cshtml",
+              "ToolTip": "E:\\SWD\\demoSWD\\Views\\Report\\ListReport.cshtml",
+              "RelativeToolTip": "demoSWD\\Views\\Report\\ListReport.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T15:09:33.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "E:\\SWD\\demoSWD\\Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "demoSWD\\Services\\ReportService.cs",
+              "ToolTip": "E:\\SWD\\demoSWD\\Services\\ReportService.cs",
+              "RelativeToolTip": "demoSWD\\Services\\ReportService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowBoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T15:05:28.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViewDetailReport.cshtml",
+              "DocumentMoniker": "E:\\SWD\\demoSWD\\Views\\Report\\ViewDetailReport.cshtml",
+              "RelativeDocumentMoniker": "demoSWD\\Views\\Report\\ViewDetailReport.cshtml",
+              "ToolTip": "E:\\SWD\\demoSWD\\Views\\Report\\ViewDetailReport.cshtml",
+              "RelativeToolTip": "demoSWD\\Views\\Report\\ViewDetailReport.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T14:47:16.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "E:\\SWD\\demoSWD\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "demoSWD\\Controllers\\ReportController.cs",
+              "ToolTip": "E:\\SWD\\demoSWD\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "demoSWD\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T07:56:43.662Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

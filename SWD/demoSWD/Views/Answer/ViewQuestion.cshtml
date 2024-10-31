@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "View Question";
+    var answers = ViewBag.Answers as List<demoSWD.Models.Answer>;
+    var question = ViewBag.Question as demoSWD.Models.Question;
+    var message = TempData["Message"] as string;
+}
+<div class="discussion-container">
+    <div class="discussion-content">
+        <label for="content">Q.@question.QuestionId</label>
+        <div class="content-box">
+            <p>@question.QuestionContent</p>
+        </div>
+        <p>
+            Discussion has been started.<br />
+            Students can answer for this questio.<br />
+            Note: You are currently in <Strong>SWD392</Strong> warning !!!
+        </p>
+    </div>
+
+    <form asp-action="CreateQuestion" asp-controller="Answer" method="post">
+        <input type="hidden" name="questionId" value="@question.QuestionId"/>
+        <div class="comment-box">
+            <textarea name="content" placeholder="Type your comment here..." required></textarea>
+            <button type="submit" class="send-button">Reply</button>
+        </div>
+    </form>
+    @if (message != null)
+    {
+        <div class="alert alert-warning">
+            @message
+        </div>
+    }
+
+
+    <div class="comments-section">
+        @foreach(var answer in answers)
+        {
+            <h4>Me</h4>
+            <p class="comment-date">@answer.CreatedDate</p>
+            <div class="comment-content">
+                <p>@answer.AnswerContent</p>
+            </div>
+        }
+
+    </div>
+</div>
+<style>
+    .discussion-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .discussion-content {
+        margin-bottom: 20px;
+    }
+
+    .content-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .discussion-navigation {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+        .discussion-navigation button {
+            flex: 1;
+            padding: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .discussion-navigation .active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+    .discussion-select {
+        margin-bottom: 15px;
+    }
+
+    .comment-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+        .comment-box textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+    .send-button {
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .send-button:hover {
+            background-color: #0056b3;
+        }
+
+    .comments-section {
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+    }
+
+        .comments-section h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    .comment-date {
+        font-size: 12px;
+        color: #888;
+        margin-bottom: 8px;
+    }
+
+    .comment-content {
+        font-size: 14px;
+        color: #333;
+    }
+
+</style>
