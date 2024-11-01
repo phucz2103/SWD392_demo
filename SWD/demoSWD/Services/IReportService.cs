@@ -6,5 +6,6 @@ namespace demoSWD.Services
         List<Report> GetAllReport();
         Report viewDetailReport(int reportId);
         bool isReportSolved(int reportId);
+        bool isReportRead(int reportId);
     }
 }

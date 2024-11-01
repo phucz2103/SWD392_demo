@@ -271,7 +271,7 @@ namespace demoSWD.Models
                     .HasMaxLength(100)
                     .HasColumnName("reportTitle");
 
-                entity.Property(e => e.SolvedBy).HasColumnName("solvedBy");
+                entity.Property(e => e.IsRead).HasColumnName("isRead");
 
                 entity.Property(e => e.SolvedDate)
                     .HasColumnType("date")
@@ -281,11 +281,6 @@ namespace demoSWD.Models
                     .WithMany(p => p.ReportCreatedByNavigations)
                     .HasForeignKey(d => d.CreatedBy)
                     .HasConstraintName("FK__Reports__created__52593CB8");
-
-                entity.HasOne(d => d.SolvedByNavigation)
-                    .WithMany(p => p.ReportSolvedByNavigations)
-                    .HasForeignKey(d => d.SolvedBy)
-                    .HasConstraintName("FK__Reports__solvedB__534D60F1");
             });
 
             modelBuilder.Entity<Role>(entity =>

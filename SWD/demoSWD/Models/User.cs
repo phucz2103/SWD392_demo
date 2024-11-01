@@ -10,7 +10,6 @@ namespace demoSWD.Models
             Accounts = new HashSet<Account>();
             Answers = new HashSet<Answer>();
             ReportCreatedByNavigations = new HashSet<Report>();
-            ReportSolvedByNavigations = new HashSet<Report>();
             Classes = new HashSet<Classroom>();
             Classes1 = new HashSet<Classroom>();
             ClassesNavigation = new HashSet<Classroom>();
@@ -27,7 +26,6 @@ namespace demoSWD.Models
         public virtual ICollection<Account> Accounts { get; set; }
         public virtual ICollection<Answer> Answers { get; set; }
         public virtual ICollection<Report> ReportCreatedByNavigations { get; set; }
-        public virtual ICollection<Report> ReportSolvedByNavigations { get; set; }
 
         public virtual ICollection<Classroom> Classes { get; set; }
         public virtual ICollection<Classroom> Classes1 { get; set; }

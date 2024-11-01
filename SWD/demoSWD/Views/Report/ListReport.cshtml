@@ -11,6 +11,7 @@
             <th>createddate</th>
             <th>createdby</th>
             <th>issolve</th>
+            <th>isread</th>
         </tr>
     </thead>
     <tbody>
@@ -46,6 +47,14 @@
                     <td>Done</td>
                }
            
+               @if (!report.IsRead)
+               {
+                  <td>Not Yet</td>
+               }
+               else
+               {
+                    <td>Done</td>
+               }
             </tr>
         }
     </tbody>

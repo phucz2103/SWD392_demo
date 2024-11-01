@@ -28,12 +28,27 @@ namespace demoSWD.Services
                 }
                 report.IsSolved = true;
                 edunex.SaveChanges();
-                    return true;
-                }
+                return true;
             }
+        }
 
-           public Report viewDetailReport(int reportId)
+        public bool isReportRead(int reportId)
+        {
+            using (var edunex = new EdunextSystemDBContext())
             {
+                Report report = edunex.Reports.SingleOrDefault(r => r.ReportId == reportId);
+                if (report == null)
+                {
+                    return false;
+                }
+                report.IsRead = true;
+                edunex.SaveChanges();
+                return true;
+            }
+        }
+
+        public Report viewDetailReport(int reportId)
+        {
             using (var edunex = new EdunextSystemDBContext())
             {
                 Report report = edunex.Reports.SingleOrDefault(r => r.ReportId == reportId);

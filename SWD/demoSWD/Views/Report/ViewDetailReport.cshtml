@@ -35,6 +35,18 @@
                 <button type="submit" class="solve-button">Solve</button>
             }
         </form>
+
+        <form asp-action="isReportRead" asp-controller="Report" method="post">
+            <input type="hidden" name="reportId" value="@Model.ReportId" />
+            @if (Model.IsRead)
+            {
+                <p><em style="color:red">This report has already been read  .</em></p>
+            }
+            else
+            {
+                <button type="submit" class="solve-button">Read</button>
+            }
+        </form>
         @if (TempData["ErrorMessage"] != null)
         {
             <div class="alert alert-danger">

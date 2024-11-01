@@ -6,12 +6,14 @@ namespace demoSWD.Controllers
     public class ReportController : Controller
     {
         public ReportService _reportService = new ReportService();
+        
         public IActionResult ListReport()
         {
             List<Report> reports = _reportService.GetAllReport();
             ViewBag.Reports = reports;
             return View();
         }
+
         public IActionResult ViewDetailReport(int reportId)
         {
             Report report = _reportService.viewDetailReport(reportId);
@@ -23,6 +25,7 @@ namespace demoSWD.Controllers
             ViewBag.Report = report;
             return View(report);
         }
+
         [HttpPost]
         public IActionResult isReportSolved(int reportId)
         {
@@ -30,7 +33,20 @@ namespace demoSWD.Controllers
 
             if (!result)
             {
-                TempData["ErrorMessage"] = "Failed to mark report as solved or report not found.";
+                TempData["ErrorMessage"] = "Failed to mark report as solved or report was not found.";
+            }
+
+            return RedirectToAction("ViewDetailReport", new { reportId = reportId });
+        }
+
+        [HttpPost]
+        public IActionResult isReportRead(int reportId)
+        {
+            bool result = _reportService.isReportRead(reportId);
+
+            if (!result)
+            {
+                TempData["ErrorMessage"] = "Failed to mark report as read or report was not found.";
             }
 
             return RedirectToAction("ViewDetailReport", new { reportId = reportId });
